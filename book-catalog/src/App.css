@@ -1,0 +1,155 @@
+
+:root{
+  --ink: black; 
+  --sand: pink; 
+  --panel:#ffffff;
+}
+
+html, body, #root { 
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%; 
+}
+
+body { 
+  background:#fff; 
+  color:var(--ink); 
+  font-family: 'inter',sans-serif; 
+  overflow-x:hidden; 
+}
+
+.app { 
+  min-height:100vh; 
+  display:flex; 
+  flex-direction:column; 
+  width:100%; 
+}
+
+/* Header/Footer across entire width */
+.header, .footer { 
+  width:100%; 
+  box-sizing:border-box; 
+}
+.header { 
+  background:var(--sand); 
+  border-bottom:4px solid var(--ink); 
+  text-align:center; padding:28px 16px; 
+}
+.header h1 {
+  margin:0; 
+  font-size:36px;
+  font-weight:700;
+}
+.footer {
+  background:var(--ink);
+  color:#e6eaf0;
+  text-align:center;
+  padding:14px 12px;
+}
+
+/* Content area: remove side gutters */
+.main {
+  flex:1;
+  width:100%;
+  box-sizing:border-box;
+  padding:24px 0;
+  display:flex;
+}
+
+.row, .book-grid {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  justify-content:flex-start;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  gap:24px;
+}
+
+
+/* Cards */
+.book-card, .add-card, .add-book-card {
+  width:240px;
+  height:360px;
+  border-radius:8px;
+  border:3px solid #d7dbe2;
+  background:var(--panel);
+  overflow:hidden; display:flex;
+  flex-direction:column;
+  flex-shrink:0;
+}
+.add-card:hover {
+  background: pink; /* pink fill */
+  color: white;      /* white text */
+  border-color: pink; /* optional: match border to pink */
+}
+/* Add left padding to the very first book card */
+.row .book-card:first-child,
+.book-grid .book-card:first-child {
+  margin-left: 24px;
+}
+
+
+/* Book content */
+.book-image {
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f3f4f6;
+}
+.book-image img {
+  width:180px;
+  height:220px;
+  object-fit:contain;
+}
+.book-meta {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  flex:1;
+}
+.book-authors {
+  text-align:center;
+  padding:10px 12px;
+  color:var(--ink);
+  font-size:14px;
+}
+.learn-more, .view-button {
+  width:100%;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  padding:10px 0;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.learn-more {
+  text-align: center;
+}
+.learn-more:hover {
+  color: pink;
+}
+
+/* Add card */
+.add-card, .add-book-card {
+  background:#f4f6f8;
+  color:#9aa3ad;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:700;
+  cursor:pointer; }
+
+/* Error */
+.error {color:#b91c1c;
+  font-size:12px;
+  text-align:center;
+  padding:6px;
+  background:#fef2f2;
+}
